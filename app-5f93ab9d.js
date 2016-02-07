@@ -326,14 +326,14 @@ module.exports = {
 
     })(exports,require,module);
   });
-})();require.register("application", function(exports, require, module) {
+})();require.register("index", function(exports, require, module) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _deck = require('modules/deck');
+var _deck = require('./modules/deck');
 
 var _deck2 = _interopRequireDefault(_deck);
 
