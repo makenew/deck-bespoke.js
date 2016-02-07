@@ -1,5 +1,6 @@
 # Bespoke.js Deck Skeleton
 
+[![GitHub release](https://img.shields.io/github/release/makenew/deck-bespoke.js.svg)](https://github.com/makenew/deck-bespoke.js/releases)
 [![GitHub license](https://img.shields.io/badge/license-CC--BY--SA--4.0-blue.svg)](./LICENSE.txt)
 [![Gemnasium](https://img.shields.io/gemnasium/makenew/deck-bespoke.js.svg)](https://gemnasium.com/makenew/deck-bespoke.js)
 [![Travis](https://img.shields.io/travis/makenew/deck-bespoke.js.svg)](https://travis-ci.org/makenew/deck-bespoke.js)
