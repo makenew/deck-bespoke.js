@@ -44,8 +44,8 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed -i -e '9,183d;380,383d' README.md
-  sed -i -e "9i ${mk_description}" README.md
+  sed -i -e '11,185d;382,385d' README.md
+  sed -i -e "11i ${mk_description}" README.md
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
   find_replace "s/0\.0\.0\.\.\./${mk_version}.../g"
@@ -63,7 +63,7 @@ makenew () {
     "s/https:\/\/evansosenko\.com\//$(echo ${mk_owner_url} | sed s/\\//\\\\\\//g)/g"
 
   mk_attribution='> Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).'
-  sed -i -e "7i ${mk_attribution}\n" README.md
+  sed -i -e "9i ${mk_attribution}\n" README.md
 
   echo
   echo 'Replacing boilerplate.'
