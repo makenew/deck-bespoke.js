@@ -56,6 +56,7 @@ the following typical boilerplate files are not Included:
 - Extensive intelligent meta tag support.
 - Write modern JavaScript with [Babel] and the [ES2015 preset].
 - Write styles with [Sass] and [Autoprefixer].
+- Production build assets optimized with Sass and [UglifyJS].
 - Frontend and development dependency management with [npm].
 - Synchronised browser testing with [Browsersync].
 - Cache-optimized assets with [digest-brunch].
@@ -96,6 +97,7 @@ the following typical boilerplate files are not Included:
 [Sass Lint]: https://github.com/sasstools/sass-lint
 [Shields.io]: http://shields.io/
 [Travis CI]: https://travis-ci.org/
+[UglifyJS]: https://github.com/mishoo/UglifyJS2
 [Yaml Front Matter]: https://github.com/dworthen/js-yaml-front-matter
 
 ### Bootstrapping a New Project
