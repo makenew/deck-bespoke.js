@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/license-CC--BY--SA--4.0-blue.svg)](./LICENSE.txt)
 [![David](https://img.shields.io/david/makenew/deck-bespoke.js.svg)](https://david-dm.org/makenew/deck-bespoke.js)
 [![David](https://img.shields.io/david/dev/makenew/deck-bespoke.js.svg)](https://david-dm.org/makenew/deck-bespoke.js#info=devDependencies)
-[![Travis](https://img.shields.io/travis/makenew/deck-bespoke.js.svg)](https://travis-ci.org/makenew/deck-bespoke.js)
+[![Travis](https://img.shields.io/travis/makenew/deck-bespoke.js/demo.svg)](https://travis-ci.org/makenew/deck-bespoke.js)
 
 > Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).
 
