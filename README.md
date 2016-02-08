@@ -32,7 +32,7 @@ YAML front matter and partials.
 
 Add images or other assets anywhere under `app/assets`
 and refer to them with, e.g., if you have `app/assets/images/kitty.png`,
-write `src="DIGEST(images/kitten.png)"`.
+write `src="DIGEST(/images/kitten.png)"`.
 
 This skeleton only comes with one plugins and one theme:
 [bespoke-keys] and [bespoke-theme-cube].

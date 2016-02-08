@@ -16,6 +16,9 @@ exports.config = {
 
   plugins: {
     digest: {
+      prependHost: {
+        production: '/deck-bespoke.js'
+      },
       referenceFiles: /\.(css|html|js)$/
     },
 
