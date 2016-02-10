@@ -56,7 +56,7 @@ the following typical boilerplate files are not Included:
 - Extensive intelligent meta tag support.
 - Write modern JavaScript with [Babel] and the [ES2015 preset].
 - Write styles with [Sass] and [Autoprefixer].
-- Production build assets optimized with Sass and [UglifyJS].
+- Production assets optimized with [UglifyJS] and [cssnano].
 - Frontend and development dependency management with [npm].
 - Synchronised browser testing with [Browsersync].
 - Cache-optimized assets with [digest-brunch].
@@ -77,6 +77,7 @@ the following typical boilerplate files are not Included:
 [Babel]: https://babeljs.io/
 [Browsersync]: https://www.browsersync.io/
 [Brunch]: http://brunch.io/
+[cssnano]: http://cssnano.co/
 [Creative Commons]: https://creativecommons.org/
 [digest-brunch]: https://github.com/mutewinter/digest-brunch
 [EditorConfig]: http://editorconfig.org/
