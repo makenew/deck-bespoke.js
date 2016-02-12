@@ -1,6 +1,6 @@
 {
   "name": "makenew-deck-bespoke.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Bespoke.js deck demo.",
   "private": true,
   "keywords": [
@@ -16,10 +16,10 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "build": "de public && brunch build",
-    "clean": "de public",
+    "build": "del public && brunch build",
+    "clean": "del public",
     "deploy": "gulp minify && gulp deploy",
-    "dist": "de public && npm test && brunch build -p && gulp htmlhint",
+    "dist": "del public && npm test && brunch build -p && gulp htmlhint",
     "gh-pages": "gulp deploy",
     "lint": "gulp lint",
     "lint:html": "gulp htmlhint",
@@ -36,6 +36,12 @@
   "standard": {
     "parser": "babel-eslint"
   },
+  "dependencies": {
+    "bespoke": "^1.1.0",
+    "bespoke-keys": "^1.1.0",
+    "bespoke-theme-cube": "^2.0.1",
+    "sanitize.css": "^3.2.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel-brunch": "^6.0.0",
@@ -45,7 +51,7 @@
     "brunch": "^2.2.3",
     "brunch-static": "^1.1.0",
     "cssnano": "^3.4.0",
-    "del-cli": "^0.1.2",
+    "del-cli": "^0.2.0",
     "digest-brunch": "^1.5.1",
     "eslint": "^2.0.0-rc.0",
     "git-rev-sync": "^1.4.0",
@@ -66,11 +72,5 @@
     "standard": "^6.0.1",
     "uglify-js-brunch": "^2.0.1",
     "yaml-front-matter": "^3.3.0"
-  },
-  "dependencies": {
-    "bespoke": "^1.1.0",
-    "bespoke-keys": "^1.1.0",
-    "bespoke-theme-cube": "^2.0.1",
-    "sanitize.css": "^3.2.0"
   }
 }

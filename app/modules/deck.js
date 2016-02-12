@@ -1,5 +1,3 @@
-'use strict'
-
 import bespoke from 'bespoke'
 import keys from 'bespoke-keys'
 import cube from 'bespoke-theme-cube'
