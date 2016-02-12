@@ -114,7 +114,7 @@ the following typical boilerplate files are not Included:
    Optionally, reset to the latest [release][Releases] with
 
    ```
-   $ git reset --hard deck-bespoke.js-v1.1.0
+   $ git reset --hard deck-bespoke.js-v1.1.1
    ```
 
 2. Run
