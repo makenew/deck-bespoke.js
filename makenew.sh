@@ -44,7 +44,7 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed -i -e '11,189d;386,389d' README.md
+  sed -i -e '3d;12,190d;387,390d' README.md
   sed -i -e "11i ${mk_description}" README.md
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
@@ -62,7 +62,7 @@ makenew () {
   find_replace \
     "s/https:\/\/evansosenko\.com\//$(echo ${mk_owner_url} | sed s/\\//\\\\\\//g)/g"
 
-  mk_attribution='> Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).'
+  mk_attribution='> <img src="https://makenew.github.io/makenew.svg" alt="Make New" height="20"> Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).'
   sed -i -e "9i ${mk_attribution}\n" README.md
 
   echo
