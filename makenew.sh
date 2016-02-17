@@ -62,7 +62,7 @@ makenew () {
   find_replace \
     "s/https:\/\/evansosenko\.com\//$(echo ${mk_owner_url} | sed s/\\//\\\\\\//g)/g"
 
-  mk_attribution='> <img src="https://makenew.github.io/makenew.svg" alt="Make New" height="20"> Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).'
+  mk_attribution='> Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).'
   sed -i -e "9i ${mk_attribution}\n" README.md
 
   echo
