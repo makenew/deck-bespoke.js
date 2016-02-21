@@ -1,7 +1,7 @@
 {
   "name": "makenew-deck-bespoke.js",
-  "version": "1.2.0",
   "description": "Bespoke.js deck demo.",
+  "version": "1.2.1",
   "private": true,
   "keywords": [
     "bespoke.js",
@@ -71,7 +71,6 @@
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
     "standard": "^6.0.5",
-    "uglify-js-brunch": "^2.0.1",
-    "yaml-front-matter": "^3.3.0"
+    "uglify-js-brunch": "^2.0.1"
   }
 }
