@@ -59,7 +59,7 @@ the following typical boilerplate files are not Included:
 - Write styles with [Sass] and [Autoprefixer].
 - Production assets optimized with [UglifyJS] and [cssnano].
 - Frontend and development dependency management with [npm].
-- Synchronised browser testing with [Browsersync].
+- Automatic browser reloading with [auto-reload-brunch].
 - Cache-optimized assets with [digest-brunch].
 - Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
@@ -74,9 +74,9 @@ the following typical boilerplate files are not Included:
 - Includes a free culture [Creative Commons] license.
 - Badges from [Shields.io].
 
+[auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
 [Autoprefixer]: https://github.com/postcss/autoprefixer
 [Babel]: https://babeljs.io/
-[Browsersync]: https://www.browsersync.io/
 [Brunch]: http://brunch.io/
 [cssnano]: http://cssnano.co/
 [Creative Commons]: https://creativecommons.org/
