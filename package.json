@@ -1,7 +1,7 @@
 {
   "name": "makenew-deck-bespoke.js",
+  "version": "1.3.0",
   "description": "Bespoke.js deck demo.",
-  "version": "1.2.1",
   "private": true,
   "keywords": [
     "bespoke.js",
@@ -40,16 +40,16 @@
     "bespoke": "^1.1.0",
     "bespoke-keys": "^1.1.0",
     "bespoke-theme-cube": "^2.0.1",
-    "sanitize.css": "^3.2.0"
+    "normalize.css": "^4.0.0"
   },
   "devDependencies": {
+    "auto-reload-brunch": "^2.1.0",
     "autoprefixer": "^6.3.1",
     "babel-brunch": "^6.0.0",
-    "babel-eslint": "^5.0.0",
+    "babel-eslint": "^6.0.0",
     "babel-preset-es2015": "^6.3.13",
-    "browser-sync-brunch": "0.0.9",
-    "brunch": "^2.3.2",
-    "brunch-static": "^1.1.0",
+    "brunch": "^2.5.2",
+    "brunch-static": "^1.1.1",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
     "digest-brunch": "^1.5.1",

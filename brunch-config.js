@@ -1,6 +1,8 @@
 exports.config = {
   npm: {
-    enabled: true
+    styles: {
+      'normalize.css': ['normalize.css']
+    }
   },
 
   files: {
@@ -8,9 +10,7 @@ exports.config = {
       joinTo: 'app.js'
     },
     stylesheets: {
-      joinTo: {
-        'app.css': /^app\/styles/
-      }
+      joinTo: 'app.css'
     }
   },
 
@@ -30,7 +30,7 @@ exports.config = {
   plugins: {
     digest: {
       prependHost: {
-        production: '/deck-bespoke.js'
+        production: 'https://makenew.github.io/deck-bespoke.js'
       },
       referenceFiles: /\.(css|html|js)$/
     },
