@@ -40,7 +40,7 @@
     "bespoke": "^1.1.0",
     "bespoke-keys": "^1.1.0",
     "bespoke-theme-cube": "^2.0.1",
-    "sanitize.css": "^3.2.0"
+    "normalize.css": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
