@@ -71,7 +71,7 @@ the following typical boilerplate files are not Included:
 - [Travis CI] and [wercker] ready.
 - Deploy to [GitHub pages] locally or from [wrecker]
   (or [add Travis CI deployment][travis-deploy]).
-- Optimized and tested deployment build with [HTMLMinifier].
+- Optimized and tested deployment build with [HTMLMinifier] and [imagemin].
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
 - Includes a free culture [Creative Commons] license.
@@ -95,6 +95,7 @@ the following typical boilerplate files are not Included:
 [HTMLHint]: https://github.com/yaniswang/HTMLHint
 [HTMLMinifier]: https://github.com/kangax/html-minifier
 [humans.txt]: http://humanstxt.org/
+[imagemin]: https://github.com/imagemin/imagemin
 [JavaScript Standard Style]: http://standardjs.com/
 [Keep a CHANGELOG]: http://keepachangelog.com/
 [npm]: https://www.npmjs.com/
@@ -300,7 +301,7 @@ $ gulp --tasks
 
 #### HTMLMinifier
 
-Minify all `.html` files in the `public` directory with
+Minify all HTML and image files in the `public` directory with
 
 ```
 $ npm run minify
@@ -314,7 +315,7 @@ Deploy the `public` directory to GitHub Pages with
 $ npm run deploy
 ```
 
-This will minify the HTML before deployment.
+This will minify the HTML and images before deployment.
 Deploy the `public` directory as-is with
 
 ```
