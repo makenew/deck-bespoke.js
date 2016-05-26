@@ -30,7 +30,7 @@ exports.config = {
   plugins: {
     digest: {
       prependHost: {
-        production: 'https://makenew.github.io/deck-bespoke.js'
+        production: '/deck-bespoke.js'
       },
       referenceFiles: /\.(css|html|js)$/
     },
