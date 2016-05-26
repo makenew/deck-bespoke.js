@@ -24,8 +24,7 @@ baseurl: /deck-bespoke.js
     <main>
       {{content}}
     </main>
-    <script>document.documentElement.className = 'js'</script>
-    <script src="DIGEST(/app.js)"></script>
-    <script>require('index.js').default()</script>
+    <script src="DIGEST(/app.js)" defer></script>
+    <script src="DIGEST(/initialize.js)" defer></script>
   </body>
 </html>
