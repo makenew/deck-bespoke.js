@@ -16,7 +16,8 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "pretest": "gulp lint",
+    "test": "true",
+      "pretest": "gulp lint",
 
     "build": "brunch build --production",
       "prebuild": "gulp clean",
