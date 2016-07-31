@@ -20,10 +20,26 @@ const paths = {
   styles: `${this.src}/**/*.scss`
 }
 
-gulp.task('default', ['lint', 'watch'])
-gulp.task('lint', ['standard', 'sass-lint'])
-gulp.task('minify', ['htmlmin', 'imagemin'])
-gulp.task('watch', ['watch:html', 'watch:scripts', 'watch:styles'])
+gulp.task('default', [
+  'lint',
+  'watch'
+])
+
+gulp.task('lint', [
+  'sass-lint'
+  'standard',
+])
+
+gulp.task('minify', [
+  'htmlmin',
+  'imagemin'
+])
+
+gulp.task('watch', [
+  'watch:html',
+  'watch:scripts',
+  'watch:styles'
+])
 
 gulp.task('clean', () => (del(paths.dist)))
 
