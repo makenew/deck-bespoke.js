@@ -8,5 +8,5 @@ Source: https://github.com/makenew/deck-bespoke.js
 
 /* LIBRARIES */
 https://github.com/bespokejs/bespoke
-https://github.com/Nytramr/bespoke-theme-simple-slide
+https://github.com/bespokejs/bespoke-theme-cube
 https://necolas.github.io/normalize.css/
