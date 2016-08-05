@@ -11,18 +11,35 @@ const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
 
-const paths = {
-  dist: 'public',
-  html: 'public/**/*.html',
-  images: 'public/**/*.{gif,jpg,png}',
-  scripts: 'app/**/*.js',
-  styles: 'app/**/*.scss'
-}
+let paths = {src: 'app', dist: 'public'}
 
-gulp.task('default', ['lint', 'watch'])
-gulp.task('lint', ['standard', 'sass-lint'])
-gulp.task('minify', ['htmlmin', 'imagemin'])
-gulp.task('watch', ['watch:html', 'watch:scripts', 'watch:styles'])
+paths = Object.assign(paths, {
+  html: `${paths.dist}/**/*.html`,
+  images: `${paths.dist}/**/*.{gif,jpg,png}`,
+  scripts: `${paths.src}/**/*.js`,
+  styles: `${paths.src}/**/*.scss`
+})
+
+gulp.task('default', [
+  'lint',
+  'watch'
+])
+
+gulp.task('lint', [
+  'sass-lint',
+  'standard'
+])
+
+gulp.task('minify', [
+  'htmlmin',
+  'imagemin'
+])
+
+gulp.task('watch', [
+  'watch:html',
+  'watch:scripts',
+  'watch:styles'
+])
 
 gulp.task('clean', () => (del(paths.dist)))
 
@@ -102,7 +119,8 @@ gulp.task('deploy', (done) => {
     message: `Deploy ${gitRevSync.short()} from v${pkg.version} [ci skip]`,
     repo: process.env.DEPLOY_REPO || `git@github.com:${pkg.repository}.git`,
     branch: process.env.DEPLOY_BRANCH || 'gh-pages',
-    logger: (message) => { console.log(`[ deploy ] ${message}`) },
+    logger: (message) => {
+      console.log(`[ deploy ] ${message}`)},
     user: {
       name: process.env.DEPLOY_NAME || pkg.author.name,
       email: process.env.DEPLOY_EMAIL || pkg.author.email

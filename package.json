@@ -1,6 +1,6 @@
 {
   "name": "makenew-deck-bespoke.js",
-  "version": "1.5.2",
+  "version": "1.6.2",
   "description": "Bespoke.js deck demo.",
   "private": true,
   "keywords": [
@@ -16,16 +16,21 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "start": "brunch watch --server",
-    "pretest": "gulp lint",
-    "predist": "npm test",
-    "dist": "npm run build",
-    "postdist": "gulp minify",
-    "prebuild": "gulp clean",
+    "test": "true",
+      "pretest": "gulp lint",
+
     "build": "brunch build --production",
-    "postbuild": "gulp htmlhint",
-    "predeploy": "npm run dist",
+      "prebuild": "gulp clean",
+      "postbuild": "gulp htmlhint",
+
+    "dist": "npm run build",
+      "predist": "npm test",
+      "postdist": "gulp minify",
+
     "deploy": "gulp deploy",
+      "predeploy": "npm run dist",
+
+    "start": "brunch watch --server",
     "watch": "gulp watch"
   },
   "files": [
@@ -66,7 +71,7 @@
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
-    "postcss-brunch": "^0.5.0",
+    "postcss-brunch": "^0.6.0",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
     "standard": "^7.0.1",
