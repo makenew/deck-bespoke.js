@@ -33,13 +33,6 @@ exports.config = {
   },
 
   plugins: {
-    digest: {
-      prependHost: {
-        production: '/deck-bespoke.js'
-      },
-      referenceFiles: /\.(css|html|js)$/
-    },
-
     postcss: {
       processors: [
         require('autoprefixer')
@@ -58,6 +51,13 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
+              urlprefix () {
+                const url = process.env.DOMAIN || 'makenew.github.io'
+                const baseurl = typeof process.env.BASEURL === 'string'
+                  ? process.env.BASEURL
+                  : '/deck-bespoke.js'
+                return `https://${url}${baseurl}`
+              },
               join (context, block) {
                 return context.join(block.hash.delimiter)
               },

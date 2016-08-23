@@ -3,9 +3,6 @@ _options:
   partials:
     - app/partials/meta.static.hbs
     - app/partials/favicon.static.html
-
-url: https://makenew.github.io
-baseurl: /deck-bespoke.js
 ---
 <!doctype html>
 <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
@@ -16,15 +13,15 @@ baseurl: /deck-bespoke.js
     {{> meta}}
     <meta name="msapplication-config" content="none">
     <meta name="mobile-web-app-capable" content="yes">
-    <link type="text/plain" rel="author" href="{{baseurl}}/humans.txt">
-    <link rel="stylesheet" href="DIGEST(/app.css)">
+    <link type="text/plain" rel="author" href="{{urlprefix}}/humans.txt">
+    <link rel="stylesheet" href="/app.css">
     {{> favicon}}
   </head>
   <body>
     <main>
       {{content}}
     </main>
-    <script src="DIGEST(/vendor.js)" defer></script>
-    <script src="DIGEST(/app.js)" defer></script>
+    <script src="/vendor.js" defer></script>
+    <script src="/app.js" defer></script>
   </body>
 </html>

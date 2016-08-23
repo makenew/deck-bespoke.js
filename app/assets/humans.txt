@@ -3,7 +3,6 @@ Author: Evan Sosenko
 Email: razorx@evansosenko.com
 
 /* SITE */
-URL: https://makenew.github.io/deck-bespoke.js/
 Source: https://github.com/makenew/deck-bespoke.js
 
 /* LIBRARIES */

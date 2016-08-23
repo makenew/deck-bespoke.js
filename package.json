@@ -25,7 +25,7 @@
 
     "dist": "npm run build",
       "predist": "npm test",
-      "postdist": "gulp minify",
+      "postdist": "gulp rev",
 
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",
@@ -55,7 +55,6 @@
     "brunch-static": "^1.1.1",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
-    "digest-brunch": "^1.5.1",
     "eslint": "^2.1.0",
     "gh-pages": "^0.11.0",
     "git-rev-sync": "^1.4.0",
@@ -66,6 +65,7 @@
     "gulp-imagemin": "^3.0.1",
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-rev-all": "^0.8.24",
     "gulp-sass-lint": "^1.1.1",
     "gulp-standard": "^7.0.1",
     "gulp-watch": "^4.3.5",

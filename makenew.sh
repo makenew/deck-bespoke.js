@@ -55,10 +55,8 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed_delete README.md '3d;14,196d;384,387d'
+  sed_delete README.md '3d;14,197d;387,390d'
   sed_insert README.md '13i' "${mk_description}"
-  sed_delete brunch-config.js '38d'
-  sed_delete app/layouts/main.static.hbs '8d'
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
   find_replace "s/0\.0\.0\.\.\./${mk_version}.../g"
@@ -69,15 +67,11 @@ makenew () {
   find_replace "s/razorx@evansosenko\.com/${mk_email}/g"
   find_replace "s/makenew\/deck-bespoke.js/${mk_user}\/${mk_repo}/g"
   find_replace "s/makenew-deck-bespoke.js/${mk_slug}/g"
-  find_replace "s/makenew.github.io/${mk_domain}/g"
   find_replace "s/cd deck-bespoke.js/cd ${mk_repo}/g"
+  find_replace "s/makenew.github.io/${mk_domain}/g"
+  find_replace "s/\/deck-bespoke.js/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
   find_replace \
     "s/https:\/\/evansosenko\.com\//$(echo ${mk_owner_url} | sed s/\\//\\\\\\//g)/g"
-
-  if [ -n "$mk_baseurl" ]; then
-    sed_insert brunch-config.js '38i' "        production: '${mk_baseurl}'"
-    sed_insert app/layouts/main.static.hbs '8i' "baseurl: ${mk_baseurl}"
-  fi
 
   mk_attribution='> Built from [makenew/deck-bespoke.js](https://github.com/makenew/deck-bespoke.js).'
   sed_insert README.md '9i' "${mk_attribution}\n"

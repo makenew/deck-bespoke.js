@@ -35,7 +35,7 @@ YAML front matter and partials.
 
 Add images or other assets anywhere under `app/assets`
 and refer to them with, e.g., if you have `app/assets/images/kitty.png`,
-write `src="DIGEST(/images/kitten.png)"`.
+write `src="/images/kitten.png"`.
 
 This skeleton only comes with one plugins and one theme:
 [bespoke-keys] and [bespoke-theme-cube].
@@ -62,7 +62,6 @@ the following typical boilerplate files are not Included:
 - Production assets optimized with [UglifyJS] and [cssnano].
 - Frontend and development dependency management with [npm].
 - Automatic browser reloading with [auto-reload-brunch].
-- Cache-optimized assets with [digest-brunch].
 - Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
 - Normalized element styles with [Normalize.css].
@@ -71,7 +70,8 @@ the following typical boilerplate files are not Included:
 - [Travis CI] and [wercker] ready.
 - Deploy to [GitHub pages] locally or from [wrecker]
   (or [add Travis CI deployment][travis-deploy]).
-- Optimized and tested deployment build with [HTMLMinifier] and [imagemin].
+- Optimized and tested deployment build with
+  [gulp-rev-all], [HTMLMinifier] and [imagemin].
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
 - Includes a free culture [Creative Commons] license.
@@ -83,12 +83,12 @@ the following typical boilerplate files are not Included:
 [Brunch]: http://brunch.io/
 [cssnano]: http://cssnano.co/
 [Creative Commons]: https://creativecommons.org/
-[digest-brunch]: https://github.com/mutewinter/digest-brunch
 [EditorConfig]: http://editorconfig.org/
 [ES2015 preset]: https://babeljs.io/docs/plugins/preset-es2015/
 [Favic-o-matic]: http://www.favicomatic.com/
 [GitHub pages]: https://pages.github.com/
 [gulp]: http://gulpjs.com/
+[gulp-rev-all]: https://github.com/smysnk/gulp-rev-all
 [Handlebars]: http://handlebarsjs.com/
 [html-brunch-static]: https://github.com/bmatcuk/html-brunch-static
 [HTML5 Boilerplate]: https://html5boilerplate.com/
@@ -146,7 +146,8 @@ the following typical boilerplate files are not Included:
    to `app/assets/favicon` and overwrite `app/assets/favicon.ico`.
    You can make a quick [Font Awesome] favicon at [FA2PNG].
 
-6. Further customize the meta data in `app/index.static.hbs`.
+6. Further customize the meta data in `app/index.static.hbs`
+   and replace `app/assets/image.png` with a custom image.
 
 7. [Lock your dependencies](#updating-requirements)
    with `npm-shrinkwrap.json`.
@@ -262,6 +263,10 @@ Lint, test, generate, and optimize the production build to `public` with
 $ npm run dist
 ```
 
+The base URL and asset prefix is set at build time in
+`brunch-config.js` and `gulpfile.js` and may be overridden
+by `BASEURL` and `ASSET_PREFIX`.
+
 #### Deploy to GitHub Pages
 
 Build and deploy to GitHub Pages with
@@ -345,8 +350,6 @@ Put slides in `app/partials/slides.static.hbs`, e.g.,
   via the setting in `brunch-config.coffee`.
 - Use `app/styles/main.scss` as the entry point for your styles.
 - All other assets may be placed under `app/assets`.
-- Wrap asset paths referenced in your markup
-  with `DIGEST` for cache busting support.
 
 ### Meta Data
 
@@ -355,11 +358,11 @@ Meta data is defined in `app/index.static.hbs`.
 - Nil values are indicated by a `~`.
   Nil fields never generate a meta tag.
   Fields which are Nil by default are generally optional.
-- The `image`, `audio`, and `video` fields must be given
-  as a fully qualified url.
-  The recommended way to specify this value is with `DIGEST`, e.g.,
-  assuming `app/assets/images/logo.png` exists,
-  use `image: DIGEST(/images/logo.png)`.
+- The `image`, `audio`, and `video` fields must result in a fully qualified url.
+  This is handled for local files automatically, but you must also
+  add the file to `dontRev` in `gulpfile.js`.
+  For externally hosted files, you must modify
+  `app/partials/meta.static.hbs`
 - Instead of the `video` field, you may specify a `youtube` video id.
 - The `twitter` fields are used for [Twitter Cards], but you must
   enable them for your domain with Twitter first.

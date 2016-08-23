@@ -13,12 +13,13 @@ const pkg = require('./package.json')
 
 let paths = {
   src: 'app',
-  dist: 'public'
+  build: 'public',
+  dist: 'dist'
 }
 
 paths = Object.assign(paths, {
-  html: `${paths.dist}/**/*.html`,
-  images: `${paths.dist}/**/*.{gif,jpg,png}`,
+  html: `${paths.build}/**/*.html`,
+  images: `${paths.build}/**/*.{gif,jpg,png}`,
   scripts: `${paths.src}/**/*.js`,
   styles: `${paths.src}/**/*.scss`
 })
@@ -44,7 +45,12 @@ gulp.task('watch', [
   'watch:styles'
 ])
 
-gulp.task('clean', () => (del(paths.dist)))
+gulp.task('clean', () => (
+  del([
+    paths.build,
+    paths.dist
+  ])
+))
 
 gulp.task('htmlhint', () => (
   gulp.src(paths.html)
@@ -94,7 +100,7 @@ gulp.task('watch:styles', () => (
 gulp.task('imagemin', () => (
   gulp.src(paths.images)
     .pipe($.imagemin())
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest(paths.build))
 ))
 
 gulp.task('htmlmin', () => (
@@ -109,8 +115,31 @@ gulp.task('htmlmin', () => (
       minifyCSS: true,
       minifyJS: true
     }))
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest(paths.build))
 ))
+
+gulp.task('rev', ['minify'], () => {
+  const dontRev = [
+    '404.html',
+    'index.html',
+    'humans.txt',
+    'robots.txt',
+    'crossdomain.xml',
+    'image.png'
+  ]
+
+  const revAll = new $.revAll({ // eslint-disable-line new-cap
+    prefix: typeof process.env.ASSET_PREFIX === 'string'
+      ? process.env.ASSET_PREFIX
+      : '/deck-bespoke.js',
+    dontRenameFile: dontRev,
+    dontUpdateReference: dontRev
+  })
+
+  return gulp.src(`${paths.build}/**`)
+    .pipe(revAll.revision())
+    .pipe(gulp.dest(paths.dist))
+})
 
 gulp.task('deploy', (done) => {
   fs.openSync(path.join(paths.dist, '.nojekyll'), 'w')
